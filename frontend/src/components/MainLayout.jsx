@@ -21,7 +21,11 @@ function MainLayout({ children }) {
 
             {/* TOPBAR */}
             <div className="topbar">
-                <h2>MLM Dashboard</h2>
+                 <h2>   {user && (
+            <span className="role-badge">
+                {user.role === "admin" ? "Admin" : "User"}
+            </span>
+        )} Dashboard</h2>
 
                 <div className="top-actions">
                     <button onClick={() => setSidebarOpen(!sidebarOpen)}>
